@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn Vue</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="nav-bar">
+      <div class="title">Shoe Store</div>
+    </div>
+    <div id="app">
+      <div class="product">
+        <div id="cart">
+          <div class="cart">
+            <p>Cart({{cart.length}})</p>
+          </div>
+        </div>
+        <product
+          :premium="premium"
+          @add-to-cart="updateCart"
+          @remove-from-cart="removeItem"
+        ></product>
+
+        <!-- <div class="product-image">
+          <img :src="image" alt="" />
+        </div>
+        <div class="product-info">
+          <h1>{{sale}}</h1>
+          <p v-if="inStock>5">In Stock</p>
+          <p v-else-if="inStock>0 && inStock<=5">Almost Sold Out</p>
+          <p v-else :class="{outOfStock: !inStock}">Out of Stock</p>
+          <a :href="link">more products..</a>
+          <ul>
+            <li v-for="detail in details">{{detail}}</li>
+          </ul>
+          <div
+            class="color-box"
+            v-for="(variant, index) in variants"
+            :key="variant.variantId"
+            :style="{backgroundColor: variant.variantColor}"
+            @mouseover="updateProduct(index)"
+          >
+            <p>
+              {{variant.variantColor}}
+            </p>
+          </div>
+          <button
+            v-on:click="addToCart"
+            :disabled="!inStock"
+            :class="{disabledButton: !inStock}"
+          >
+            Add to cart
+          </button>
+          <button v-on:click="decToCart">-</button>
+          <div class="cart">
+            <p>Cart ({{cart}})</p>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
